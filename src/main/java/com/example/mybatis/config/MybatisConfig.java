@@ -12,6 +12,6 @@ import com.example.mybatis.utils.GeneratorUtils;
 public class MybatisConfig {
     public static void main(String[] args) {
         GeneratorUtils generatorUtils = new GeneratorUtils();
-        generatorUtils.init("mybatis");
+        generatorUtils.init("mybatis","mybatis");
     }
 }

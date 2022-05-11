@@ -11,6 +11,6 @@ import com.example.mybatis.utils.GeneratorUtils;
 public class JiangsuConfig {
     public static void main(String[] args) {
         GeneratorUtils generatorUtils = new GeneratorUtils();
-        generatorUtils.init("jiangsu");
+        generatorUtils.init("jiangsu","beijing");
     }
 }

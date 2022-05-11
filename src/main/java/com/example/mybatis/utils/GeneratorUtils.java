@@ -13,19 +13,19 @@ import java.util.Collections;
  * @DATE 2022/5/11 10:42
  */
 public class GeneratorUtils {
-    public void init(String database){
+    public void init(String database, String position){
         String url = "jdbc:mysql://localhost:3306/" + database;
         FastAutoGenerator.create(url, "root", "123456")
                 .globalConfig(builder -> {
                     builder.author("mac") // 设置作者
 //                            .enableSwagger() // 开启 swagger 模式
                             .fileOverride() // 覆盖已生成文件
-                            .outputDir("D:\\MAC\\mybatis\\generator\\"+database); // 指定输出目录
+                            .outputDir("D:\\MAC\\mybatis\\generator\\"+position); // 指定输出目录
                 })
                 .packageConfig(builder -> {
-                    builder.parent(database) // 设置父包名
-                            .moduleName("") // 设置父包模块名
-                            .pathInfo(Collections.singletonMap(OutputFile.mapper, "D:\\MAC\\mybatis\\generator\\"+database)); // 设置mapperXml生成路径
+                    builder.parent("com.china") // 设置父包名
+                            .moduleName(position) // 设置父包模块名
+                            .pathInfo(Collections.singletonMap(OutputFile.mapper, "D:\\MAC\\mybatis\\generator\\"+position)); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
                     System.out.println(builder);
